@@ -3,3 +3,5 @@
 This project will be my attempt to make a site like meetup. It will have three models-a groups, user and meetup models. The goal will be that a user will be able to join a group and then one can see other people in the group from the meetup model.
 
 == GEMS USED
+
+Bootstrap, Semantic UI
