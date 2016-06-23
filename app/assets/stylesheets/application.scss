@@ -23,3 +23,47 @@
 .main {
   margin-top: 7.0em;
 }
+
+.jumbotron {
+  text-align: center;
+  margin-bottom: 0px;
+  height: 600px;
+  width: auto;
+  margin-top: -20px;
+  background-image: image-url("meeting.jpg");
+  background-size: 100% 100%;
+}
+
+.jum_image{
+  background-repeat: no-repeat;
+  height: 700px;
+}
+
+.banner {
+  background-position: top left, center center;
+  background-repeat: repeat, no-repeat;
+  background-size: auto, cover;
+  color: #fff;
+  padding: 12em 0;
+  position: relative;
+  text-align: center
+}
+
+.inner {
+  display: inline-block;
+  background: rgba(29,39,38,0.7);
+  position: relative;
+  z-index: 2;
+  padding: 25px 25px 25px 25px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 40px;
+  color: white;
+}
+
+.inner_font {
+  font-size: 35px;
+  color: white;
+}
