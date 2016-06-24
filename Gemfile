@@ -47,4 +47,5 @@ end
 
 gem 'bootstrap-sass'
 gem 'semantic-ui-sass'
+gem 'devise'
 
