@@ -1,8 +1,12 @@
 <div class="container main">
   <h1>Collections</h1>
+  <%= link_to "New", new_collection_path, class: "ui inverted black button active" %>
+  <hr>
   <% @collections.each do |collection| %>
       <h1>Collection name: <%= collection.name %><h1>
       <p>Groups in Collection: <%= collection.group.topic %></p>
       <p>Members in Collection: <%= collection.user.email %></p>
+      <%= link_to "Show", collection_path(collection) %>
+      <hr>
   <% end %>
 </div>

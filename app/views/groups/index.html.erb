@@ -1,6 +1,9 @@
-<h1>Listing Groups</h1>
+<div class="container main">
+  <h1>Listing Groups</h1>
+  <%= link_to "New Group", new_group_path, class: "ui inverted black button active" %>
 
-<% @groups.each do |group| %>
-  <h1><%= group.topic %></h1>
-  <p><%= group.description %></p>
-<% end %>
+  <% @groups.each do |group| %>
+    <h1><%= group.topic %></h1>
+    <p><%= group.description %></p>
+  <% end %>
+</div>
