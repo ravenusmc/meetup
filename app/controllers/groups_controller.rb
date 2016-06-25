@@ -1,7 +1,19 @@
 class GroupsController < ApplicationController
 
+  include GroupsHelper
+
   def index 
     @groups = Group.all
+    @group_count = 0
+
+    @nearby_groups = []
+
+    @groups.each do |group|
+      if nearby(group.longitude, group.latitude, current_user.longitude, current_user.latitude)
+        @group_count += 1
+        @nearby_groups.push(group)
+      end 
+    end 
   end
 
   def show
@@ -43,7 +55,7 @@ class GroupsController < ApplicationController
   private
 
     def group_params
-      params.require(:group).permit(:topic, :user_id, :description) 
+      params.require(:group).permit(:topic, :user_id, :description, :address, :city, :state) 
     end
 
 end

@@ -2,7 +2,7 @@
   <h1>Listing Groups</h1>
   <%= link_to "New Group", new_group_path, class: "ui inverted black button active" %>
 
-  <% @groups.each do |group| %>
+  <% @nearby_groups.each do |group| %>
     <h1><%= group.topic %></h1>
     <p><%= group.description %></p>
     <%= link_to "show", group_path(group), class: "ui inverted blue button" %>
