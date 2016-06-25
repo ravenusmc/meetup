@@ -5,5 +5,9 @@
   <% @groups.each do |group| %>
     <h1><%= group.topic %></h1>
     <p><%= group.description %></p>
+    <%= link_to "show", group_path(group), class: "ui inverted blue button" %>
+    <%= link_to "Edit", edit_group_path(group), class: "ui inverted green button" %>
+    <%= link_to "Delete", group_path(group), method: :delete, data: { confirm: "Are you Sure?"},
+      class: "ui inverted red button" %>
   <% end %>
 </div>
