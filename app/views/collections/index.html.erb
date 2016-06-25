@@ -5,7 +5,7 @@
   <% @collections.each do |collection| %>
       <h1>Collection name: <%= collection.name %><h1>
       <p>Groups in Collection: <%= collection.group.topic %></p>
-      <p>Members in Collection: <%= collection.user.email %></p>
+      <p>Members in Collection: <%= collection.user.username %></p>
       <%= link_to "Show", collection_path(collection) %>
       <hr>
   <% end %>

@@ -4,4 +4,4 @@ This project will be my attempt to make a site like meetup. It will have three m
 
 == GEMS USED
 
-Bootstrap, Semantic UI, Devise
+Bootstrap, Semantic UI, Devise, Geocoder

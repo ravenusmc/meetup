@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160624192206) do
+ActiveRecord::Schema.define(version: 20160625192849) do
 
   create_table "collections", force: :cascade do |t|
     t.string   "name"
@@ -42,6 +42,12 @@ ActiveRecord::Schema.define(version: 20160624192206) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "username"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
