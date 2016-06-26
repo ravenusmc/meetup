@@ -1,13 +1,15 @@
-<div class="container main">
-  <h1>Listing Groups</h1>
-  <%= link_to "New Group", new_group_path, class: "ui inverted black button active" %>
+<div class="ui raised very padded text container segment main">
+  <h1 class="ui header edit-fix">Listing Groups Near Your Location</h1>
+  <div class="edit-fix">
+    <%= link_to "New Group", new_group_path, class: "ui inverted green button active" %>
+  </div>
 
   <% @nearby_groups.each do |group| %>
     <h1><%= group.topic %></h1>
     <p><%= group.description %></p>
     <%= link_to "show", group_path(group), class: "ui inverted blue button" %>
-    <%= link_to "Edit", edit_group_path(group), class: "ui inverted green button" %>
+    <%= link_to "Edit", edit_group_path(group), class: "ui black button" %>
     <%= link_to "Delete", group_path(group), method: :delete, data: { confirm: "Are you Sure?"},
-      class: "ui inverted red button" %>
+      class: "ui inverted red button " %>
   <% end %>
 </div>
