@@ -1,12 +1,17 @@
 class CommentsController < ApplicationController
 
+  def index 
+    @group = Group.find(params[:group_id])
+  end
+
   def new 
-    @comment = Comment.new(group: @group)
+    @group = Group.find(params[:group_id])
+    @comment = @group.comments.new
   end 
 
   def create
-    @groups = Group.all
-    @comment = Comment.new(comment_params)
+    @group = Group.find(params[:group_id])
+    @comment = @group.comments.new(comment_params)
     if @comment.save 
       redirect_to @group 
     else 
@@ -18,6 +23,17 @@ class CommentsController < ApplicationController
   end
 
   def update
+  end 
+
+  def destroy
+    @group = Group.find(params[:group_id])
+    @comment = @group.comments.find(params[:id])
+    if @comment.destroy
+      flash[:success] = "Comment Destroyed"
+    else 
+      flash[:error] = "Comment could not be deleted"
+    end 
+    redirect_to @group
   end 
 
   private 
