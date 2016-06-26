@@ -1,5 +1,6 @@
 class Group < ActiveRecord::Base
   has_many :collections
+  has_many :comments 
   has_many :users, :through => :collections
 
   validates :topic, presence: true

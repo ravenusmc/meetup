@@ -3,7 +3,7 @@ class GroupsController < ApplicationController
   include GroupsHelper
 
   def index 
-    @groups = Group.all
+    @groups = Group.includes(:comments)
     @group_count = 0
 
     @nearby_groups = []

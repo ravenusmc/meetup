@@ -1,7 +1,18 @@
 <div class="container main">
-  <h1>Page for the group: <%= @group.topic %></h1>
+  <h1>The <%= @group.topic %> Group!</h1>
   <p>Description: <em><%= @group.description %></em></p>
   <p>Group Address: <em><%= @group.address %></em></p>
   <p>Group City: <em><%= @group.city %></em></p>
   <p>Group State: <em><%= @group.state %></em></p>
+</div>
+
+
+<div class="container comment_container">
+<hr>
+    <h2><em>Comments:</em></h2>
+  <% @group.comments.each do |comment| %>
+    <p><%= comment.author %> says:</p>
+    <p><%= comment.comment %></p>
+    <hr>
+  <% end %>
 </div>
