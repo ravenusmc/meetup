@@ -58,7 +58,7 @@
   text-align: center;
 }
 
-h3 {
+.banner-heading {
   font-size: 40px;
   color: white;
 }
@@ -73,10 +73,29 @@ h3 {
 }
 
 .segment_center {
+  margin-top: 10px;
   text-align: center;
 }
 
 /* CSS for Group Show Page */
-.comment_container {
 
+
+/* CSS for Log In Pages Under Devise */
+
+.main2 {
+  position: relative;
+  background: #fff;
+  box-shadow: 0px 1px 2px 0 rgba(34, 36,38, 0.15);
+  padding: 1em 1em; 
+  border-radius: 0.28571429rem;
+  border: 1px solid rgba(34,36,38,0.15);
+}
+
+.btn-fix {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.edit-fix {
+  text-align: center;
 }
