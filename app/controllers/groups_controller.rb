@@ -22,6 +22,7 @@ class GroupsController < ApplicationController
 
   def new 
     @group = Group.new 
+    @collections = Collection.all
   end 
 
   def create
