@@ -13,7 +13,7 @@
   <% @group.comments.each do |comment| %>
     <p><%= comment.author %> says:</p>
     <p><%= comment.comment %></p>
-    <p><%= link_to "Edit", edit_group_comment_path(@group, comment) %>
+    <p><%= link_to "Edit", edit_group_comment_path(@group, comment), class: "ui grey button" %>
     <%= link_to "Delete", group_comment_path(@group, comment), method: :delete, data: { confirm: "Are you sure?"}, class: "ui inverted red button" %></p>
     <hr>
   <% end %>

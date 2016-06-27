@@ -25,6 +25,14 @@ class CommentsController < ApplicationController
   end
 
   def update
+    @group = Group.find(params[:group_id])
+    @comment = @group.comments.find(params[:id])
+    if @comment.update_attributes(comment_params)
+      #handles an update
+      redirect_to @group
+    else 
+      render action: :edit
+    end 
   end 
 
   def destroy
