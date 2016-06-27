@@ -20,6 +20,8 @@ class CommentsController < ApplicationController
   end 
 
   def edit 
+    @group = Group.find(params[:group_id])
+    @comment = @group.comments.find(params[:id])
   end
 
   def update
