@@ -4,7 +4,7 @@
   <p>Group Address: <em><%= @group.address %></em></p>
   <p>Group City: <em><%= @group.city %></em></p>
   <p>Group State: <em><%= @group.state %></em></p>
-  <% if current_user.id == @group.try(:user).try(:id) %>
+  <% if current_user and current_user.id == @group.user_id %>
     <%= link_to "Edit", edit_group_path(), class: "ui black button" %>
     <%= link_to "Delete", group_path(), method: :delete, data: { confirm: "Are you Sure?"},
         class: "ui inverted red button " %>
@@ -18,8 +18,10 @@
   <% @group.comments.each do |comment| %>
     <p><%= comment.author %> says:</p>
     <p><%= comment.comment %></p>
+    <% if current_user and current_user.id == comment.user_id %>
       <p><%= link_to "Edit", edit_group_comment_path(@group, comment), class: "ui grey button" %>
       <%= link_to "Delete", group_comment_path(@group, comment), method: :delete, data: { confirm: "Are you sure?"}, class: "ui inverted red button" %></p>
+    <% end %>
     <hr>
   <% end %>
   <%= link_to "New", new_group_comment_path(@group), class: "ui inverted black button active" %>

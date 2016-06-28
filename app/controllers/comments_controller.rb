@@ -29,7 +29,7 @@ class CommentsController < ApplicationController
     @comment = @group.comments.find(params[:id])
     if @comment.update_attributes(comment_params)
       #handles an update
-      redirect_to @group
+      redirect_to @group, notice: "Comment was successfully created!"
     else 
       render action: :edit
     end 

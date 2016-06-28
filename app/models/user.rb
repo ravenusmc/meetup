@@ -11,4 +11,8 @@ class User < ActiveRecord::Base
 
   geocoded_by :address
   after_validation :geocode
+
+  def has_group_access?(group_id)
+    Collection.find_by_group_id_and_user_id(group_id, self.id)
+  end
 end
