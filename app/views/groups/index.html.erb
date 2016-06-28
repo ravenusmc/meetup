@@ -7,11 +7,13 @@
   <% @nearby_groups.each do |group| %>
     <h1><%= group.topic %></h1>
     <p><%= group.description %></p>
-    <% if current_user.id == @group.try(:user).try(:id) %>
+
+    <% if current_user and current_user.id == @group.user_id %>
       <%= link_to "Edit", edit_group_path(group), class: "ui black button" %>
       <%= link_to "Delete", group_path(group), method: :delete, data: { confirm: "Are you Sure?"},
         class: "ui inverted red button " %>
     <% end %>
+
     <%= link_to "show", group_path(group), class: "ui inverted blue button" %>
   <% end %>
 </div>
