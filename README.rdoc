@@ -5,3 +5,11 @@ This project will be my attempt to make a site like meetup. It will have three m
 == GEMS USED
 
 Bootstrap, Semantic UI, Devise, Geocoder
+
+== LOCATION 
+
+This project is actually been posted through Heroku. One can find the link here: https://neighborhood-meetup.herokuapp.com/users/sign_in
+
+The site is not responsive-something that I need to work on. 
+
+
